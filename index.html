@@ -8,6 +8,7 @@
 <meta property="og:title" content="Travel &amp; Finance Tips" />
 <meta property="og:description" content="Smarter points. Cheaper travel. Better credit — explained simply." />
 <meta property="og:type" content="website" />
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230f1e3d'/%3E%3Ctext x='32' y='43' font-family='Arial,sans-serif' font-size='30' font-weight='800' fill='%23c8a24a' text-anchor='middle'%3ETF%3C/text%3E%3C/svg%3E" />
 <style>
   :root{
     --navy:#0f1e3d; --navy-2:#16294f; --gold:#c8a24a; --gold-2:#e0c274;
@@ -153,6 +154,27 @@
     </p>
   </div>
 </footer>
+
+<script>
+/* Attribution capture: read inbound source (utm_source/utm_medium/utm_campaign or ?src=),
+   persist first-party, and stamp it as a subid onto outbound affiliate links (a[data-aff])
+   once they exist. Inert pre-approval — no affiliate links on the page yet.
+   NOTE: confirm CardRatings' exact subid param name at approval. */
+(function(){
+  try{
+    var q=new URLSearchParams(location.search);
+    var parts=[q.get('utm_source')||q.get('src'),q.get('utm_medium'),q.get('utm_campaign')].filter(Boolean);
+    var tag=parts.join('-');
+    if(tag){try{localStorage.setItem('tf_src',tag);}catch(e){}}
+    var src=tag||(function(){try{return localStorage.getItem('tf_src')||'';}catch(e){return '';}})();
+    if(src){
+      document.querySelectorAll('a[data-aff]').forEach(function(a){
+        try{var u=new URL(a.href,location.href);u.searchParams.set('subid',src);a.href=u.toString();}catch(e){}
+      });
+    }
+  }catch(e){}
+})();
+</script>
 
 </body>
 </html>
