@@ -3,178 +3,189 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Travel &amp; Finance Tips — Smarter Points, Cheaper Travel, Better Credit</title>
-<meta name="description" content="Plain-English guides on credit cards, travel rewards points, and everyday money. Educational tips to help you build credit, redeem points for more, and travel for less." />
-<meta property="og:title" content="Travel &amp; Finance Tips" />
-<meta property="og:description" content="Smarter points. Cheaper travel. Better credit — explained simply." />
+<title>Travel &amp; Finance Tips — Cards &amp; Tools We Actually Use</title>
+<meta name="description" content="The starter cards, travel cards, and money tools we break down on Travel & Finance Tips. Referral links — educational only, not financial advice." />
+<meta property="og:title" content="Travel &amp; Finance Tips — Cards &amp; Tools" />
+<meta property="og:description" content="Start no-fee. Level up only when the math works. Cards, banking, and cashback we actually use." />
 <meta property="og:type" content="website" />
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230f1e3d'/%3E%3Ctext x='32' y='43' font-family='Arial,sans-serif' font-size='30' font-weight='800' fill='%23c8a24a' text-anchor='middle'%3ETF%3C/text%3E%3C/svg%3E" />
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f1e3d'/%3E%3Ctext x='32' y='43' font-family='Georgia,serif' font-size='30' font-weight='700' fill='%23c8a24a' text-anchor='middle'%3ETF%3C/text%3E%3C/svg%3E" />
 <style>
   :root{
     --navy:#0f1e3d; --navy-2:#16294f; --gold:#c8a24a; --gold-2:#e0c274;
-    --ink:#1c2537; --muted:#5b6577; --paper:#ffffff; --mist:#f5f7fb; --line:#e6eaf1;
+    --ink:#1b2333; --muted:#616b7d; --paper:#ffffff; --mist:#f4f6fa; --line:#e7ebf2;
+    --chase:#1466b8; --amex:#7a8798; --sofi:#00a3ad; --rakuten:#c9337a;
   }
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
   body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
-    color:var(--ink);background:var(--paper);line-height:1.6;-webkit-font-smoothing:antialiased}
-  a{color:var(--navy);text-decoration:none}
-  .wrap{max-width:960px;margin:0 auto;padding:0 22px}
-  /* Header / hero */
-  header.hero{background:linear-gradient(160deg,var(--navy) 0%,var(--navy-2) 100%);color:#fff;
-    padding:64px 0 56px;text-align:center;border-bottom:3px solid var(--gold)}
-  .brand{font-weight:800;letter-spacing:.5px;font-size:15px;text-transform:uppercase;color:var(--gold-2)}
-  .hero h1{font-size:40px;line-height:1.15;margin:14px 0 10px;font-weight:800}
-  .hero p{font-size:18px;color:#cdd6e6;max-width:620px;margin:0 auto 26px}
-  .cta{display:inline-block;background:var(--gold);color:var(--navy);font-weight:800;
-    padding:13px 26px;border-radius:8px;font-size:16px;transition:transform .12s ease,background .2s}
-  .cta:hover{background:var(--gold-2);transform:translateY(-1px)}
-  .sub{display:block;margin-top:14px;font-size:13px;color:#aab6cc}
-  /* Section */
-  section{padding:52px 0;border-bottom:1px solid var(--line)}
-  h2{font-size:26px;font-weight:800;color:var(--navy);margin:0 0 8px}
-  .lead{color:var(--muted);max-width:640px;margin:0 0 30px}
-  /* Pillars grid */
-  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
-  .card{background:var(--mist);border:1px solid var(--line);border-radius:12px;padding:22px}
-  .card .tag{display:inline-block;font-size:12px;font-weight:700;color:var(--gold);
-    text-transform:uppercase;letter-spacing:.6px;margin-bottom:8px}
-  .card h3{margin:0 0 6px;font-size:18px;color:var(--navy)}
-  .card p{margin:0;color:var(--muted);font-size:15px}
-  /* Guides list */
-  .guides{display:grid;gap:14px}
-  .guide{display:flex;gap:16px;align-items:flex-start;background:#fff;border:1px solid var(--line);
-    border-radius:10px;padding:18px 20px}
-  .guide .num{font-weight:800;color:var(--gold);font-size:20px;min-width:26px}
-  .guide h3{margin:0 0 4px;font-size:17px;color:var(--navy)}
-  .guide p{margin:0;color:var(--muted);font-size:15px}
-  /* Cards CTA band */
-  .band{background:var(--navy);color:#fff;text-align:center}
-  .band h2{color:#fff}
-  .band .lead{color:#cdd6e6;margin:0 auto 24px}
-  /* Footer */
-  footer{padding:40px 0 56px;background:var(--mist);color:var(--muted);font-size:14px}
-  footer .cols{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:24px}
-  .disclosure{background:#fff;border:1px solid var(--line);border-left:3px solid var(--gold);
-    border-radius:8px;padding:16px 18px;font-size:13px;color:var(--muted);line-height:1.55}
-  .social a{color:var(--navy);font-weight:700}
-  .fineprint{font-size:12px;color:#8a93a5;margin-top:18px;line-height:1.5}
-  @media(max-width:600px){.hero h1{font-size:30px}.hero{padding:48px 0 40px}footer .cols{grid-template-columns:1fr}}
+    color:var(--ink);background:var(--mist);line-height:1.5;-webkit-font-smoothing:antialiased}
+  a{text-decoration:none;color:inherit}
+  .wrap{max-width:540px;margin:0 auto;padding:0 20px}
+
+  header{background:radial-gradient(120% 140% at 50% -10%,#22407a 0%,transparent 60%),
+    linear-gradient(165deg,var(--navy) 0%,var(--navy-2) 100%);
+    color:#fff;text-align:center;padding:44px 0 34px;position:relative;
+    border-bottom:1px solid rgba(200,162,74,.4)}
+  header:after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;
+    background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+  .crest{width:56px;height:56px;border-radius:15px;margin:0 auto 14px;
+    background:#0b1830;border:1px solid rgba(200,162,74,.55);
+    display:flex;align-items:center;justify-content:center;
+    font-family:Georgia,"Times New Roman",serif;font-weight:700;font-size:26px;color:var(--gold-2)}
+  .brand{font-weight:700;letter-spacing:2px;font-size:11px;text-transform:uppercase;color:var(--gold-2)}
+  header h1{font-family:Georgia,"Times New Roman",serif;font-size:23px;margin:9px 0 8px;font-weight:700;line-height:1.25}
+  header p{font-size:14.5px;color:#cdd6e6;margin:0 auto;max-width:400px}
+  .follow{margin-top:16px;font-size:12.5px;color:#aab6cc}
+  .follow b{color:#fff;font-weight:700}
+
+  .discl{max-width:540px;margin:-14px auto 0;padding:0 20px;position:relative;z-index:2}
+  .discl div{background:#fff;border:1px solid var(--line);border-left:3px solid var(--gold);
+    border-radius:10px;padding:12px 14px;font-size:12px;color:var(--muted);line-height:1.55;
+    box-shadow:0 6px 18px rgba(15,30,61,.06)}
+
+  main{padding:8px 0 4px}
+  .lede{color:var(--muted);font-size:14px;margin:20px 2px 4px;text-align:center;font-style:italic}
+  section{padding:16px 0 2px}
+  .grouphead{font-size:11.5px;font-weight:800;text-transform:uppercase;letter-spacing:1px;
+    color:var(--navy);margin:0 2px 12px;display:flex;align-items:center;gap:10px}
+  .grouphead:after{content:"";flex:1;height:1px;background:var(--line)}
+
+  .link{display:flex;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);
+    border-radius:14px;padding:15px 15px 15px 0;margin-bottom:12px;position:relative;overflow:hidden;
+    box-shadow:0 1px 2px rgba(15,30,61,.04);transition:transform .12s ease,box-shadow .2s,border-color .2s}
+  .link:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(15,30,61,.10);border-color:#d7deea}
+  .link .accent{width:5px;align-self:stretch;border-radius:14px 0 0 14px;flex:0 0 5px}
+  .link .body{flex:1;min-width:0}
+  .link .t{font-weight:800;color:var(--navy);font-size:15px;letter-spacing:-.1px}
+  .link .d{color:var(--muted);font-size:13px;margin-top:3px}
+  .link .meta{display:inline-block;font-size:11px;font-weight:700;color:var(--gold);
+    text-transform:uppercase;letter-spacing:.4px;margin-top:6px}
+  .chev{flex:0 0 auto;color:#c2cbdb;font-size:20px;padding-right:6px;transition:color .2s,transform .12s}
+  .link:hover .chev{color:var(--gold);transform:translateX(2px)}
+  .a-chase{background:var(--chase)} .a-amex{background:var(--amex)}
+  .a-sofi{background:var(--sofi)} .a-rakuten{background:var(--rakuten)}
+
+  footer{padding:26px 0 44px;color:var(--muted);font-size:12.5px;text-align:center;margin-top:10px;
+    border-top:1px solid var(--line);background:#fff}
+  footer .links a{color:var(--navy);font-weight:700}
+  .fineprint{font-size:11px;color:#8a93a5;margin-top:14px;line-height:1.55;text-align:left}
 </style>
 </head>
 <body>
 
-<header class="hero">
+<header>
   <div class="wrap">
+    <div class="crest">TF</div>
     <div class="brand">Travel &amp; Finance Tips</div>
-    <h1>Smarter points. Cheaper travel.<br />Better credit.</h1>
-    <p>Plain-English guides on credit cards, rewards points, and everyday money — so you keep more of what you earn and travel for less.</p>
-    <a class="cta" href="https://www.tiktok.com/@travelandfinancet" rel="noopener" target="_blank">Follow on TikTok →</a>
-    <span class="sub">New tips every week · @travelandfinancet</span>
+    <h1>Cards &amp; tools we actually break down</h1>
+    <p>The everyday starters, the travel cards, and the money tools worth knowing — in the order that makes sense.</p>
+    <div class="follow">Follow <b>@travelandfinancet</b> · <b>@travelandfinancetips</b></div>
   </div>
 </header>
 
-<section id="topics">
-  <div class="wrap">
-    <h2>What we cover</h2>
-    <p class="lead">Four things that quietly move your money the most. No hype, no jargon — just what actually works.</p>
-    <div class="grid">
-      <div class="card">
-        <span class="tag">Credit</span>
-        <h3>Build &amp; protect credit</h3>
-        <p>How scores really work, and the small habits that raise them without gimmicks.</p>
-      </div>
-      <div class="card">
-        <span class="tag">Points</span>
-        <h3>Get more per point</h3>
-        <p>Redeem rewards for real value instead of leaving money on the table.</p>
-      </div>
-      <div class="card">
-        <span class="tag">Travel</span>
-        <h3>Fly &amp; stay for less</h3>
-        <p>Fare timing, myths that waste money, and the tools worth using.</p>
-      </div>
-      <div class="card">
-        <span class="tag">Money</span>
-        <h3>Everyday wins</h3>
-        <p>Emergency funds, fee leaks, and setups that pay you back every month.</p>
-      </div>
-    </div>
-  </div>
-</section>
+<div class="discl"><div>
+  <strong>A quick, honest note:</strong> the links below are referral links — if you apply and get approved, I may earn a reward, at no extra cost to you. That never changes what I put here. This is education, not financial advice, and card fees, rates &amp; offers are set by the issuer and can change — always confirm on their page before you apply.
+</div></div>
 
-<section id="guides">
-  <div class="wrap">
-    <h2>Popular guides</h2>
-    <p class="lead">A few of the most-watched breakdowns from the channel.</p>
-    <div class="guides">
-      <div class="guide"><div class="num">01</div><div>
-        <h3>Build credit from scratch</h3>
-        <p>The starter steps that establish a score fast — and the traps that stall it.</p></div></div>
-      <div class="guide"><div class="num">02</div><div>
-        <h3>What your points are actually worth</h3>
-        <p>How to value a point before you redeem, so you don't cash out for pennies.</p></div></div>
-      <div class="guide"><div class="num">03</div><div>
-        <h3>Cheaper flights, without the myths</h3>
-        <p>What really affects fares — and the "tricks" that don't do anything.</p></div></div>
-      <div class="guide"><div class="num">04</div><div>
-        <h3>An emergency fund from zero</h3>
-        <p>A simple, automatic way to build your first cushion without feeling it.</p></div></div>
-    </div>
-  </div>
-</section>
+<main>
+<div class="wrap">
+  <p class="lede">Start no-fee. Level up only when the math works.</p>
 
-<section id="cards" class="band">
-  <div class="wrap">
-    <h2>Choosing a rewards card</h2>
-    <p class="lead">The right card depends on how you spend and travel — not on whichever ad shouts loudest. Our card guides walk through what to compare (rewards rate, annual fee, sign-up terms, and everyday value) so you can pick with clear eyes.</p>
-    <a class="cta" href="https://www.tiktok.com/@travelandfinancet" rel="noopener" target="_blank">See the latest picks on TikTok →</a>
-    <p class="sub">Detailed card comparisons are coming to this page soon.</p>
-  </div>
-</section>
+  <section>
+    <div class="grouphead">Start here — no annual fee</div>
+
+    <a class="link" data-aff href="https://www.referyourchasecard.com/18a/1XVMOB9P97" rel="nofollow sponsored noopener" target="_blank">
+      <span class="accent a-chase"></span>
+      <div class="body">
+        <div class="t">Chase Freedom Unlimited® / Flex℠</div>
+        <div class="d">Straightforward cash back, no annual fee — the everyday card to start with.</div>
+        <span class="meta">No fee · Beginner</span>
+      </div><span class="chev">›</span>
+    </a>
+
+    <a class="link" data-aff href="https://www.rakuten.com/r/ERLIGH2?eeid=44971" rel="nofollow sponsored noopener" target="_blank">
+      <span class="accent a-rakuten"></span>
+      <div class="body">
+        <div class="t">Rakuten — cash back on shopping</div>
+        <div class="d">Earns on top of your card rewards at stores you already use. Free to join.</div>
+        <span class="meta">Free · Stacks with cards</span>
+      </div><span class="chev">›</span>
+    </a>
+
+    <a class="link" data-aff href="https://www.sofi.com/invite/money?gcp=57e5cc0e-4771-406a-bbdb-12bd4f4c562c&amp;isAliasGcp=false" rel="nofollow sponsored noopener" target="_blank">
+      <span class="accent a-sofi"></span>
+      <div class="body">
+        <div class="t">SoFi Checking &amp; Savings</div>
+        <div class="d">High-yield savings, no account fees — a clean home for your emergency fund.</div>
+        <span class="meta">Savings</span>
+      </div><span class="chev">›</span>
+    </a>
+  </section>
+
+  <section>
+    <div class="grouphead">Travel &amp; points</div>
+
+    <a class="link" data-aff href="https://www.referyourchasecard.com/19x/RR08D8XFTN" rel="nofollow sponsored noopener" target="_blank">
+      <span class="accent a-chase"></span>
+      <div class="body">
+        <div class="t">Chase Sapphire Preferred® / Reserve®</div>
+        <div class="d">The classic travel-points cards. There's an annual fee — worth it if you travel enough.</div>
+        <span class="meta">Annual fee · Travel</span>
+      </div><span class="chev">›</span>
+    </a>
+
+    <a class="link" data-aff href="https://americanexpress.com/en-us/referral/delta-skymiles-gold-american-express-card?ref=EVANLrADF&amp;xl=cp01" rel="nofollow sponsored noopener" target="_blank">
+      <span class="accent a-amex"></span>
+      <div class="body">
+        <div class="t">Delta SkyMiles® Gold — American Express</div>
+        <div class="d">Builds Delta miles on everyday spending. A fit if Delta is your airline.</div>
+        <span class="meta">Airline miles</span>
+      </div><span class="chev">›</span>
+    </a>
+
+    <a class="link" data-aff href="https://americanexpress.com/en-us/referral/hilton-honors?ref=EVANL3NuV&amp;xl=cp01" rel="nofollow sponsored noopener" target="_blank">
+      <span class="accent a-amex"></span>
+      <div class="body">
+        <div class="t">Hilton Honors — American Express</div>
+        <div class="d">No-fee hotel-points card with automatic Hilton status. Easy free-night engine.</div>
+        <span class="meta">No fee · Hotels</span>
+      </div><span class="chev">›</span>
+    </a>
+  </section>
+
+  <section>
+    <div class="grouphead">Premium &amp; business</div>
+
+    <a class="link" data-aff href="https://americanexpress.com/en-us/referral/platinum-card?ref=EVANLzLtX&amp;xl=cp01" rel="nofollow sponsored noopener" target="_blank">
+      <span class="accent a-amex"></span>
+      <div class="body">
+        <div class="t">The Platinum Card® — American Express</div>
+        <div class="d">Lounge access and travel credits. High annual fee — only if you fly often enough to use it.</div>
+        <span class="meta">Premium · High fee</span>
+      </div><span class="chev">›</span>
+    </a>
+
+    <a class="link" data-aff href="https://www.referyourchasecard.com/21g/OJ99HW5APN" rel="nofollow sponsored noopener" target="_blank">
+      <span class="accent a-chase"></span>
+      <div class="body">
+        <div class="t">Chase Ink Business — Unlimited / Cash</div>
+        <div class="d">For a side hustle or small business — strong welcome offers, low or no annual fee.</div>
+        <span class="meta">Business</span>
+      </div><span class="chev">›</span>
+    </a>
+  </section>
+</div>
+</main>
 
 <footer>
   <div class="wrap">
-    <div class="cols">
-      <div>
-        <h3 style="color:var(--navy);margin:0 0 8px">About</h3>
-        <p style="margin:0">Travel &amp; Finance Tips is an educational channel that breaks down credit cards, travel rewards, and personal money habits in plain English. We share general information to help you make informed decisions.</p>
-        <p class="social" style="margin:14px 0 0">Follow: <a href="https://www.tiktok.com/@travelandfinancet" rel="noopener" target="_blank">@travelandfinancet</a></p>
-      </div>
-      <div>
-        <h3 style="color:var(--navy);margin:0 0 8px">Advertising disclosure</h3>
-        <div class="disclosure">
-          This site may contain advertising and affiliate links. If you apply for a product through a link here, we may earn a commission at no extra cost to you. This does not influence our editorial guides, and we only feature products we believe are worth understanding. Card terms, rates, and offers are set by the issuer and can change — always confirm details on the issuer's official page before applying.
-        </div>
-      </div>
-    </div>
+    <p class="links"><a href="./about.html">About &amp; guides</a> · <a href="https://www.tiktok.com/@travelandfinancet" rel="noopener" target="_blank">TikTok</a> · <a href="https://www.instagram.com/travelandfinancetips" rel="noopener" target="_blank">Instagram</a></p>
     <p class="fineprint">
-      Travel &amp; Finance Tips provides general educational information only and is not financial, tax, or legal advice. We are not a bank, lender, or licensed advisor. Consider your own situation and consult a qualified professional before making financial decisions. All trademarks belong to their respective owners.
-      <br />© 2026 Travel &amp; Finance Tips. All rights reserved.
+      Travel &amp; Finance Tips provides general educational information only and is not financial, tax, or legal advice. I am not a bank, lender, or licensed advisor. The links above are referral/affiliate links that may earn me a reward at no extra cost to you; this does not change what I recommend. Card terms, rates, and offers are set by the issuer and can change — always confirm details on the issuer's official page before applying. All trademarks belong to their respective owners.
+      <br />© 2026 Travel &amp; Finance Tips.
     </p>
   </div>
 </footer>
-
-<script>
-/* Attribution capture: read inbound source (utm_source/utm_medium/utm_campaign or ?src=),
-   persist first-party, and stamp it as a subid onto outbound affiliate links (a[data-aff])
-   once they exist. Inert pre-approval — no affiliate links on the page yet.
-   NOTE: confirm CardRatings' exact subid param name at approval. */
-(function(){
-  try{
-    var q=new URLSearchParams(location.search);
-    var parts=[q.get('utm_source')||q.get('src'),q.get('utm_medium'),q.get('utm_campaign')].filter(Boolean);
-    var tag=parts.join('-');
-    if(tag){try{localStorage.setItem('tf_src',tag);}catch(e){}}
-    var src=tag||(function(){try{return localStorage.getItem('tf_src')||'';}catch(e){return '';}})();
-    if(src){
-      document.querySelectorAll('a[data-aff]').forEach(function(a){
-        try{var u=new URL(a.href,location.href);u.searchParams.set('subid',src);a.href=u.toString();}catch(e){}
-      });
-    }
-  }catch(e){}
-})();
-</script>
 
 </body>
 </html>
