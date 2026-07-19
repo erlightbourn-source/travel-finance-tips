@@ -64,8 +64,9 @@
   .link .d{color:var(--muted);font-size:13px;margin-top:3px}
   .link .meta{display:inline-block;font-size:11px;font-weight:700;color:var(--gold);
     text-transform:uppercase;letter-spacing:.4px;margin-top:6px}
-  .chev{flex:0 0 auto;color:#c2cbdb;font-size:20px;padding-right:6px;transition:color .2s,transform .12s}
-  .link:hover .chev{color:var(--gold);transform:translateX(2px)}
+  /* Chevron hidden (Lily 2026-07-19): the gold "Tap to open & apply →" pill now
+     carries the tap affordance; a second arrow per card reads templated/AI. */
+  .chev{display:none}
   .a-chase{background:var(--chase)} .a-amex{background:var(--amex)}
   .a-sofi{background:var(--sofi)} .a-rakuten{background:var(--rakuten)}
 
