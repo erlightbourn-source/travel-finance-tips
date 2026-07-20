@@ -1,2 +1,3 @@
 # CNAME held out of deploy until Cloudflare DNS is wired (else GH Pages redirects to a dead domain)
 CNAME
+.bak-publish-*/
