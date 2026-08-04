@@ -49,6 +49,10 @@ section{padding:44px 0}
 .section-intro h2{font-size:clamp(23px,3.4vw,32px);margin:0 0 10px}
 .section-intro p{color:var(--muted);font-size:16px;margin:0}
 .grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+/* T2: 4-card "Where to start" grid was orphaning the 4th card on a 2nd row
+   (4×260 > ~1036 content width → only 3 fit). Force a balanced 2×2 on desktop;
+   below the mobile breakpoint it falls back to the base grid (stacks to 1). */
+@media(min-width:761px){.grid--quad{grid-template-columns:repeat(2,1fr)}}
 .card{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:24px;
   box-shadow:0 1px 2px rgba(0,0,0,.04);transition:transform .12s,box-shadow .2s}
 .card:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(0,0,0,.09)}
