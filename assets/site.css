@@ -81,3 +81,5 @@ section{padding:44px 0}
   .nav-toggle{display:block}
   .nav{flex-wrap:wrap;height:auto;padding:10px 0}
 }
+
+.form-success{color:#e9edf5;font-size:14px;margin:12px auto 0;max-width:440px;min-height:1em}
