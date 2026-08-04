@@ -7,7 +7,7 @@
   /* ---- FormSubmit fallback (always on) ----
      Random-string alias hides the destination inbox from scrapers. Routes to
      Evan's Gmail; brand is disambiguated by the _subject line below. */
-  var FORM_ENDPOINT = "https://formsubmit.co/ajax/erlightbourn@gmail.com";
+  var FORM_ENDPOINT = "https://formsubmit.co/ajax/939083f9927a031c7a6c93dad38d05df";
 
   function sendForm(payload) {
     return fetch(FORM_ENDPOINT, {
