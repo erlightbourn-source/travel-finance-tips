@@ -1,6 +1,7 @@
 :root{
   --brand:#0f1e3d; --brand2:#16294f; --accent:#c8a24a; --accent2:#e0c274;
   --ink:#1b2333; --muted:#616b7d; --paper:#fff; --mist:#f4f6fa; --line:#e7ebf2;
+  --mono:ui-monospace,"SF Mono",SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -37,6 +38,20 @@ h1,h2,h3{font-family:Georgia,"Times New Roman",serif;line-height:1.2;color:var(-
 .hero h1{color:#fff;font-size:clamp(28px,5vw,46px);margin:0 0 14px}
 .hero p{color:#e9edf5;font-size:clamp(15px,2.2vw,19px);max-width:620px;margin:0 auto 26px}
 .eyebrow{font-size:12px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--accent2);margin-bottom:12px}
+/* ---- T4 ledger system: mono kickers, gold rules, receipts strips ---- */
+.kicker{font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:2.2px;
+  text-transform:uppercase;color:var(--accent);margin:0 0 10px}
+.hero .kicker{color:var(--accent2);margin-bottom:14px}
+.num{font-family:var(--mono);font-variant-numeric:tabular-nums}
+.ledger-strip{font-family:var(--mono);font-variant-numeric:tabular-nums;font-size:13px;
+  letter-spacing:.4px;color:#f0e6cf;border-top:1px solid rgba(224,194,116,.55);
+  border-bottom:1px solid rgba(224,194,116,.55);padding:12px 6px;max-width:640px;
+  margin:26px auto 0;display:flex;flex-wrap:wrap;justify-content:center;column-gap:8px;row-gap:4px}
+.ledger-strip b{font-weight:700;color:#fff}
+.card .receipts{font-family:var(--mono);font-variant-numeric:tabular-nums;font-size:11.5px;
+  letter-spacing:.4px;text-transform:uppercase;color:var(--brand);
+  border-top:1px solid var(--accent2);padding:10px 0 0;margin:14px 0 0}
+section + section{border-top:1px solid rgba(200,162,74,.28)}
 .btn{display:inline-block;background:var(--accent);color:#0f1e3d;font-weight:800;
   padding:13px 24px;border-radius:999px;font-size:15px;box-shadow:0 4px 14px rgba(0,0,0,.18)}
 .btn:hover{background:var(--accent2);text-decoration:none}
@@ -52,8 +67,16 @@ section{padding:44px 0}
    (4×260 > ~1036 content width → only 3 fit). Force a balanced 2×2 on desktop;
    below the mobile breakpoint it falls back to the base grid (stacks to 1). */
 @media(min-width:761px){.grid--quad{grid-template-columns:repeat(2,1fr)}}
-.card{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:24px;
+.card{background:var(--paper);border:1px solid var(--line);border-top:2px solid var(--accent);
+  border-radius:16px;padding:24px;
   box-shadow:0 1px 2px rgba(0,0,0,.04);transition:transform .12s,box-shadow .2s}
+/* T3 trip cards: image-top, receipts strip at the base */
+.card--trip{display:flex;flex-direction:column;padding:0;overflow:hidden}
+.card--trip .trip-img{aspect-ratio:4/3;object-fit:cover;width:100%;display:block}
+.card--trip .trip-body{padding:18px 20px 20px;display:flex;flex-direction:column;flex:1}
+.card--trip .trip-body p{flex:1}
+.card--trip .receipts{margin-top:auto;padding-top:12px}
+.grid-after{max-width:680px;margin:22px auto 0;text-align:center;font-weight:700;font-size:14.5px}
 .card:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(0,0,0,.09)}
 .card h3{font-size:19px;margin:0 0 8px}
 .card p{color:var(--muted);font-size:14.5px;margin:0 0 14px}
@@ -69,6 +92,30 @@ section{padding:44px 0}
 .news p{color:#e9edf5;margin:0 auto 18px;max-width:480px}
 .news form{display:flex;gap:10px;max-width:440px;margin:0 auto;flex-wrap:wrap;justify-content:center}
 .news input{flex:1;min-width:200px;padding:13px 15px;border-radius:999px;border:none;font-size:15px}
+/* ---- above-fold capture band ---- */
+.capture-band{background:var(--mist);border-bottom:1px solid var(--line);padding:16px 0}
+.capture-band .inner{display:flex;align-items:center;gap:14px;flex-wrap:wrap;justify-content:center}
+.capture-band .lead-in{font-family:var(--mono);font-size:11.5px;font-weight:700;letter-spacing:1.6px;
+  text-transform:uppercase;color:var(--brand);margin:0}
+.capture-band form{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin:0}
+.capture-band input[type="email"]{padding:10px 14px;border-radius:999px;border:1px solid var(--line);
+  font-size:14px;min-width:210px}
+.capture-band .btn{padding:10px 18px;font-size:13.5px;box-shadow:none}
+.capture-band .form-success{color:var(--brand);margin:0;text-align:center;width:100%;min-height:0}
+.capture-band .form-success:empty{display:none}
+/* ---- head-to-head ledger table ---- */
+.h2h{max-width:720px;margin:0 auto;background:var(--paper);border:1px solid var(--line);
+  border-top:2px solid var(--accent);border-radius:16px;padding:26px 26px 22px;
+  box-shadow:0 1px 2px rgba(0,0,0,.04)}
+.h2h table{width:100%;border-collapse:collapse;font-size:14.5px}
+.h2h th{font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:1.6px;
+  text-transform:uppercase;color:var(--muted);text-align:left;padding:8px 6px;
+  border-bottom:1px solid var(--accent2)}
+.h2h td{padding:11px 6px;border-bottom:1px solid var(--line);vertical-align:top}
+.h2h td.num{text-align:right;white-space:nowrap}
+.h2h tr.win td{background:var(--mist);font-weight:700}
+.h2h tr:last-child td{border-bottom:none}
+.h2h .foot{font-size:12.5px;color:var(--muted);margin:14px 0 0}
 /* ---- footer ---- */
 .site-foot{background:var(--brand);color:#cdd6e6;padding:44px 0 30px;margin-top:20px}
 .site-foot .cols{display:flex;gap:40px;flex-wrap:wrap;justify-content:space-between}
@@ -86,3 +133,4 @@ section{padding:44px 0}
 }
 
 .form-success{color:#e9edf5;font-size:14px;margin:12px auto 0;max-width:440px;min-height:1em}
+.news .form-success{flex-basis:100%;min-height:0}
