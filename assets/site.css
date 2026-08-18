@@ -21,8 +21,8 @@ main:focus{outline:none}
 .wrap{max-width:1080px;margin:0 auto;padding:0 22px}
 h1,h2,h3{font-family:Georgia,"Times New Roman",serif;line-height:1.2;color:var(--brand)}
 /* ---- header / nav ---- */
-.site-head{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);
-  backdrop-filter:saturate(1.4) blur(8px);border-bottom:1px solid var(--line)}
+.site-head{position:sticky;top:0;z-index:50;background:#fff;
+  box-shadow:0 1px 0 var(--line);border-bottom:1px solid var(--line)}
 .nav{display:flex;align-items:center;gap:18px;height:64px}
 .logo{display:flex;align-items:center;gap:10px;font-weight:800;color:var(--brand);letter-spacing:.3px;flex:0 0 auto}
 .logo .mk{width:34px;height:34px;border-radius:9px;display:block;flex:0 0 auto}
