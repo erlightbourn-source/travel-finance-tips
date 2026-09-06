@@ -1,3 +1,6 @@
 # CNAME held out of deploy until Cloudflare DNS is wired (else GH Pages redirects to a dead domain)
 CNAME
 .bak-publish-*/
+
+# Untouched source images backed up by the 2026-09 image-weight pass (never commit; originals live in git history)
+assets/img/_originals/
