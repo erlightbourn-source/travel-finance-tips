@@ -26,6 +26,7 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/brand/tf-favicon-16.png" />
 <link rel="icon" href="/favicon.ico" sizes="any" />
 <link rel="apple-touch-icon" href="/assets/img/brand/tf-apple-touch-180.png" />
+<link rel="stylesheet" href="/assets/site.css" />
 <style>
   :root{
     --navy:#0f1e3d; --navy-2:#16294f; --gold:#c8a24a; --gold-2:#e0c274;
@@ -38,26 +39,29 @@
     color:var(--ink);background:var(--mist);line-height:1.5;-webkit-font-smoothing:antialiased}
   a{text-decoration:none;color:inherit}
   :focus-visible{outline:3px solid var(--navy);outline-offset:2px;border-radius:4px}
-  header :focus-visible{outline-color:var(--gold-2)}
+  .hub-hero :focus-visible{outline-color:var(--gold-2)}
   .skip{position:absolute;left:-999px;top:0;z-index:100;background:var(--navy);color:#fff;
     padding:10px 16px;border-radius:0 0 10px 0;font-weight:700}
   .skip:focus{left:0}
   main:focus{outline:none}
   .wrap{max-width:540px;margin:0 auto;padding:0 20px}
+  .site-head .wrap{max-width:1080px;padding:0 22px}
+  section+section{border-top:0}
+  a:hover{text-decoration:none}
 
-  header{background:radial-gradient(120% 140% at 50% -10%,#22407a 0%,transparent 60%),
+  .hub-hero{background:radial-gradient(120% 140% at 50% -10%,#22407a 0%,transparent 60%),
     linear-gradient(165deg,var(--navy) 0%,var(--navy-2) 100%);
     color:#fff;text-align:center;padding:44px 0 34px;position:relative;
     border-bottom:1px solid rgba(200,162,74,.4)}
-  header:after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;
+  .hub-hero:after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;
     background:linear-gradient(90deg,transparent,var(--gold),transparent)}
   .crest{width:56px;height:56px;border-radius:15px;margin:0 auto 14px;
     background:#0b1830;border:1px solid rgba(200,162,74,.55);
     display:flex;align-items:center;justify-content:center;
     font-family:Georgia,"Times New Roman",serif;font-weight:700;font-size:26px;color:var(--gold-2)}
   .brand{font-weight:700;letter-spacing:2px;font-size:11px;text-transform:uppercase;color:var(--gold-2)}
-  header h1{font-family:Georgia,"Times New Roman",serif;font-size:23px;margin:9px 0 8px;font-weight:700;line-height:1.25}
-  header p{font-size:14.5px;color:#cdd6e6;margin:0 auto;max-width:400px}
+  .hub-hero h1{font-family:Georgia,"Times New Roman",serif;font-size:23px;margin:9px 0 8px;font-weight:700;line-height:1.25;color:#fff}
+  .hub-hero p{font-size:14.5px;color:#cdd6e6;margin:0 auto;max-width:400px}
   .follow{margin-top:16px;font-size:12.5px;color:#aab6cc}
   .follow b{color:#fff;font-weight:700}
 
@@ -85,11 +89,13 @@
   .link .body{flex:1;min-width:0}
   .link .t{font-weight:800;color:var(--navy);font-size:15px;letter-spacing:-.1px}
   .link .d{color:var(--muted);font-size:13px;margin-top:3px}
-  .link .meta{display:inline-block;font-size:11px;font-weight:700;color:var(--gold);
+  .link .meta{display:inline-block;font-size:12px;font-weight:700;color:var(--gold);
     text-transform:uppercase;letter-spacing:.4px;margin-top:6px}
   /* Chevron hidden (Lily 2026-07-19): the gold "Tap to open & apply →" pill now
      carries the tap affordance; a second arrow per card reads templated/AI. */
   .chev{display:none}
+  .link--tools:after{content:"See the templates →"}
+  .a-tf{background:var(--gold)}
   .a-chase{background:var(--chase)} .a-amex{background:var(--amex)}
   .a-sofi{background:var(--sofi)} .a-rakuten{background:var(--rakuten)}
 
@@ -102,9 +108,13 @@
 <body>
 <a class="skip" href="#main">Skip to content</a>
 
-<div style="max-width:540px;margin:0 auto;padding:10px 20px 0"><a href="/" style="color:#616b7d;font-size:13px;font-weight:600;text-decoration:none">&larr; Travel &amp; Finance Tips home</a></div>
+<header class="site-head"><div class="wrap"><nav class="nav" aria-label="Primary">
+<a class="logo" href="/"><img class="mk" src="/assets/img/brand/tf-logo-mark.svg" alt="" width="34" height="34" />Travel &amp; Finance Tips</a>
+<button class="nav-toggle" aria-label="Open menu" aria-controls="nl" aria-expanded="false" onclick="this.setAttribute('aria-expanded',document.getElementById('nl').classList.toggle('open'))">☰</button>
+<div class="nav-links" id="nl"><a href="/">Home</a><a href="/best-credit-cards.html">Best Credit Cards</a><a href="/points-miles-101.html">Points &amp; Miles 101</a><a href="/travel-guides.html">Travel Guides</a><a href="/blog.html">Blog</a><a href="/referral-hub.html" aria-current="page">Referral Hub</a><a href="/about.html">About</a><a href="/newsletter.html">Newsletter</a></div>
+</nav></div></header>
 
-<header>
+<header class="hub-hero">
   <div class="wrap">
     <div class="crest">TF</div>
     <div class="brand">Travel &amp; Finance Tips</div>
@@ -205,12 +215,29 @@
       </div><span class="chev">›</span>
     </a>
   </section>
+
+  <section>
+    <div class="grouphead">Templates &amp; trackers</div>
+
+    <a class="link link--tools" href="/templates.html">
+      <span class="accent a-tf"></span>
+      <div class="body">
+        <div class="t">Templates &amp; trackers</div>
+        <div class="d">The points tracker, annual-fee calculator and card command center we run our own numbers in. Spreadsheets you keep.</div>
+        <span class="meta">Free starter · Sheets &amp; Notion</span>
+      </div>
+    </a>
+  </section>
+
+  <section>
+    <div class="news"><h2>One useful email a week</h2><p>New card math, points sweet spots, and travel deals — no spam, unsubscribe anytime.</p><form data-capture novalidate><input type="email" placeholder="you@email.com" aria-label="Email" required><input type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0"><button class="btn" type="submit">Get the newsletter</button><p class="form-success" aria-live="polite"></p></form></div>
+  </section>
 </div>
 </main>
 
 <footer>
   <div class="wrap">
-    <p class="links"><a href="./about.html">About &amp; guides</a> · <a href="https://www.tiktok.com/@travelandfinancet" rel="noopener" target="_blank">TikTok</a> · <a href="https://www.instagram.com/travelandfinancetips" rel="noopener" target="_blank">Instagram</a></p>
+    <p class="links"><a href="./about.html">About &amp; guides</a> · <a href="./templates.html">Templates</a> · <a href="./privacy.html">Privacy</a> · <a href="https://www.tiktok.com/@travelandfinancet" rel="noopener" target="_blank">TikTok</a> · <a href="https://www.instagram.com/travelandfinancetips" rel="noopener" target="_blank">Instagram</a></p>
     <p class="fineprint">
       Travel &amp; Finance Tips provides general educational information only and is not financial, tax, or legal advice. I am not a bank, lender, or licensed advisor. The links above are referral/affiliate links that may earn me a reward at no extra cost to you; this does not change what I recommend. Card terms, rates, and offers are set by the issuer and can change — always confirm details on the issuer's official page before applying. All trademarks belong to their respective owners.
       <br />© 2026 Travel &amp; Finance Tips.
@@ -218,5 +245,6 @@
   </div>
 </footer>
 
+<script src="/assets/site.js" defer></script>
 </body>
 </html>

@@ -31,7 +31,7 @@ h1,h2,h3{font-family:Georgia,"Times New Roman",serif;line-height:1.2;color:var(-
 .nav-links a:hover{color:var(--brand);border-bottom-color:var(--accent);text-decoration:none}
 .nav-links a[aria-current="page"]{color:var(--brand);border-bottom-color:var(--accent)}
 .nav-toggle{display:none;margin-left:auto;background:none;border:1px solid var(--line);border-radius:8px;
-  padding:8px 11px;font-size:16px;cursor:pointer}
+  padding:8px 11px;min-height:44px;font-size:16px;cursor:pointer}
 /* ---- hero ---- */
 .hero{background:radial-gradient(120% 130% at 50% -20%,#16294f 0%,transparent 60%),
   linear-gradient(165deg,var(--brand) 0%,var(--brand2) 100%);color:#fff;padding:72px 0 64px;text-align:center}
