@@ -68,6 +68,11 @@ section{padding:44px 0}
    (4×260 > ~1036 content width → only 3 fit). Force a balanced 2×2 on desktop;
    below the mobile breakpoint it falls back to the base grid (stacks to 1). */
 @media(min-width:761px){.grid--quad{grid-template-columns:repeat(2,1fr)}}
+/* best-credit-cards.html "genuine pick vs alternative" pairs: default grid
+   stretches both cards to the row's tallest, leaving 150-300px of dead
+   space inside the shorter card. Top-align instead so each card sizes to
+   its own content — different heights, but no empty space inside either. */
+.grid--cards{align-items:start}
 .card{background:var(--paper);border:1px solid var(--line);border-top:2px solid var(--accent);
   border-radius:16px;padding:24px;
   box-shadow:0 1px 2px rgba(0,0,0,.04);transition:transform .12s,box-shadow .2s}
