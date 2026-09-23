@@ -1,6 +1,6 @@
 /* TRAVEL & FINANCE TIPS — email capture.
-   Signups POST into a Mailchimp audience when configured, and always send a
-   best-effort FormSubmit note to Evan's Gmail so no signup is ever lost. */
+   Signups POST into the MailerLite list, and always send a best-effort
+   FormSubmit note to Evan's Gmail so no signup is ever lost. */
 (function () {
   "use strict";
 
@@ -24,42 +24,32 @@
     });
   }
 
-  /* ---- Mailchimp audience (primary list, when configured) ----
-     TO TURN ON — from Mailchimp: Audience -> Signup forms -> Embedded forms.
-       1) action: the <form action="..."> URL, e.g.
-          https://travelfinancetips.us21.list-manage.com/subscribe/post?u=XXX&id=YYY
-       2) botField: the hidden anti-bot input's name, e.g. b_XXX_YYY
-     Until action is filled in, signups fall back to FormSubmit above. */
-  var MAILCHIMP = {
-    action: "",
-    botField: ""
-  };
+  /* ---- MailerLite list (primary) ----
+     Account 2650211, embedded form "Travel and Finance Tips". The endpoint sends
+     access-control-allow-origin: *, and a form-urlencoded body keeps this a
+     simple request (no preflight). Only {"success": true} counts as subscribed. */
+  var MAILERLITE_ENDPOINT = "https://assets.mailerlite.com/jsonp/2650211/forms/199271469674398924/subscribe";
 
-  var mcSeq = 0;
-  function sendMailchimp(data) {
-    return new Promise(function (resolve, reject) {
-      if (!MAILCHIMP.action) { reject(new Error("Mailchimp not configured")); return; }
-      var url = MAILCHIMP.action.replace("/post?", "/post-json?").replace(/\/post$/, "/post-json");
-      var cb = "mc_cb_" + (++mcSeq);
-      var parts = ["EMAIL=" + encodeURIComponent(data.email)];
-      if (MAILCHIMP.botField) parts.push(encodeURIComponent(MAILCHIMP.botField) + "=");
-      url += (url.indexOf("?") === -1 ? "?" : "&") + parts.join("&") + "&c=" + cb;
-      var script = document.createElement("script");
-      var done = false;
-      var cleanup = function () {
-        if (script.parentNode) script.parentNode.removeChild(script);
-        try { delete window[cb]; } catch (e) { window[cb] = undefined; }
-      };
-      window[cb] = function (resp) {
-        if (done) return; done = true; cleanup();
-        var already = resp && resp.msg && /already/i.test(resp.msg);
-        if (resp && (resp.result === "success" || already)) resolve(resp);
-        else reject(new Error((resp && resp.msg) || "Mailchimp error"));
-      };
-      script.onerror = function () { if (!done) { done = true; cleanup(); reject(new Error("Network error")); } };
-      script.src = url;
-      document.body.appendChild(script);
-      setTimeout(function () { if (!done) { done = true; cleanup(); reject(new Error("Timeout")); } }, 10000);
+  function sendMailerLite(emailAddr) {
+    var body = new URLSearchParams();
+    body.append("fields[email]", emailAddr);
+    body.append("ml-submit", "1");
+    body.append("anticsrf", "true");
+    var ctrl = typeof AbortController === "function" ? new AbortController() : null;
+    var timer = ctrl ? setTimeout(function () { ctrl.abort(); }, 10000) : null;
+    return fetch(MAILERLITE_ENDPOINT, {
+      method: "POST",
+      headers: { Accept: "application/json" },
+      body: body,
+      signal: ctrl ? ctrl.signal : undefined
+    }).then(function (res) {
+      if (!res.ok) throw new Error("HTTP " + res.status);
+      return res.json();
+    }).then(function (json) {
+      if (!json || json.success !== true) throw new Error("MailerLite rejected");
+      return json;
+    }).finally(function () {
+      if (timer) clearTimeout(timer);
     });
   }
 
@@ -86,12 +76,10 @@
         _template: "table"
       };
 
-      var subscribe = MAILCHIMP.action
-        ? sendMailchimp({ email: email.value })
-            .then(function (r) { sendForm(payload).catch(function () {}); return r; })
-        : sendForm(payload);
+      // Inbox copy goes out regardless of the list result, so no signup is lost.
+      sendForm(payload).catch(function () {});
 
-      subscribe.then(function () {
+      sendMailerLite(email.value).then(function () {
         if (note) note.textContent = "You're in — one useful email a week, and one click to leave anytime.";
         form.reset();
       }).catch(function () {
