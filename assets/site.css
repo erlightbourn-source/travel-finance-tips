@@ -1,5 +1,5 @@
 :root{
-  --brand:#0f1e3d; --brand2:#16294f; --accent:#c8a24a; --accent2:#e0c274;
+  --brand:#0f1e3d; --brand2:#16294f; --accent:#c8a24a; --accent2:#e0c274; --accent-ink:#8c6a14;
   --ink:#1b2333; --muted:#616b7d; --paper:#fff; --mist:#f4f6fa; --line:#e7ebf2;
   --mono:ui-monospace,"SF Mono",SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
 }
@@ -42,7 +42,7 @@ h1,h2,h3{font-family:Georgia,"Times New Roman",serif;line-height:1.2;color:var(-
 .eyebrow{font-size:12px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--accent2);margin-bottom:12px}
 /* ---- T4 ledger system: mono kickers, gold rules, receipts strips ---- */
 .kicker{font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:2.2px;
-  text-transform:uppercase;color:var(--accent);margin:0 0 10px}
+  text-transform:uppercase;color:var(--accent-ink);margin:0 0 10px} /* darker gold for 11px text on white: 5.0:1 (brand #c8a24a is 2.4:1, fails WCAG AA) */
 .hero .kicker{color:var(--accent2);margin-bottom:14px}
 .num{font-family:var(--mono);font-variant-numeric:tabular-nums}
 .ledger-strip{font-family:var(--mono);font-variant-numeric:tabular-nums;font-size:13px;
