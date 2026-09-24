@@ -89,4 +89,33 @@
       });
     });
   });
+
+  /* ---- Contact form (Lily 2026-09-23) ----
+     Same FormSubmit inbox as signups; the _subject tells them apart. */
+  document.querySelectorAll("form[data-contact]").forEach(function (form) {
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var note = form.querySelector(".form-success");
+      var btn = form.querySelector('button[type="submit"]');
+      var honeypot = form.querySelector('input[name="company"]');
+      if (honeypot && honeypot.value) { if (note) note.textContent = "Thanks, message sent."; form.reset(); return; }
+      var fields = form.querySelectorAll("input[required], textarea[required]");
+      for (var i = 0; i < fields.length; i++) { if (!fields[i].checkValidity()) { fields[i].reportValidity(); return; } }
+      if (btn) btn.disabled = true;
+      if (note) note.textContent = "Sending…";
+      sendForm({
+        name: form.querySelector('[name="name"]').value,
+        email: form.querySelector('[name="email"]').value,
+        topic: form.querySelector('[name="topic"]').value,
+        message: form.querySelector('[name="message"]').value,
+        _subject: "Travel & Finance Tips — contact form",
+        _template: "table"
+      }).then(function () {
+        if (note) note.textContent = "Thanks, message sent. I'll reply within two business days.";
+        form.reset();
+      }).catch(function () {
+        if (note) note.textContent = "That didn't go through. Please try again in a minute.";
+      }).finally(function () { if (btn) btn.disabled = false; });
+    });
+  });
 })();
