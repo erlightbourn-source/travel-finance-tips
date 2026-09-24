@@ -27,8 +27,9 @@ h1,h2,h3{font-family:Georgia,"Times New Roman",serif;line-height:1.2;color:var(-
 .nav{display:flex;align-items:center;gap:18px;height:64px}
 .logo{display:flex;align-items:center;gap:10px;font-weight:800;color:var(--brand);letter-spacing:.3px;flex:0 0 auto}
 .logo .mk{width:34px;height:34px;border-radius:9px;display:block;flex:0 0 auto}
-.nav-links{display:flex;gap:16px;margin-left:auto;flex-wrap:wrap}
-.nav-links a{color:var(--ink);font-size:14.5px;font-weight:600;padding:6px 2px;border-bottom:2px solid transparent}
+.site-head .wrap{max-width:1180px}
+.nav-links{display:flex;gap:12px;margin-left:auto;flex-wrap:nowrap}
+.nav-links a{color:var(--ink);font-size:14px;font-weight:600;padding:6px 2px;border-bottom:2px solid transparent;white-space:nowrap}
 .nav-links a:hover{color:var(--brand);border-bottom-color:var(--accent);text-decoration:none}
 .nav-links a[aria-current="page"]{color:var(--brand);border-bottom-color:var(--accent)}
 .nav-toggle{display:none;margin-left:auto;background:none;border:1px solid var(--line);border-radius:8px;
@@ -130,7 +131,8 @@ section{padding:44px 0}
 .site-foot a:hover{color:var(--accent2)}
 .site-foot .fine{border-top:1px solid rgba(255,255,255,.14);margin-top:28px;padding-top:18px;
   font-size:12.5px;color:#9fb0cc;text-align:center}
-@media(max-width:760px){
+/* nav collapses to the menu button below 1100px: 9 links + logo need ~1040px on one line (wrapped and clipped at 761-1300 before 9/24) */
+@media(max-width:1100px){
   .nav-links{display:none;width:100%;flex-direction:column;gap:0;order:3}
   .nav-links.open{display:flex}
   .nav-links a{padding:12px 2px;border-bottom:1px solid var(--line)}
