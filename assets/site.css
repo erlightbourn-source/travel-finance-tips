@@ -150,3 +150,16 @@ section{padding:44px 0}
 .form-success{color:#e9edf5;font-size:14px;margin:12px auto 0;max-width:440px;min-height:1em}
 .news .form-success{flex-basis:100%;min-height:0}
 .stamp{font-size:11px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;color:var(--muted);text-align:right;padding:10px 2px 0}
+
+/* Home "Where to start": direct buy strip under the 4 cards (Iris L303 split, Lily 9/24) */
+.buybar{margin-top:20px;display:grid;gap:18px 32px;align-items:start}
+.buybar:hover{transform:none}
+.buybar h3{font-size:21px}
+.buybar-price{color:var(--brand)}
+.buybar-was{color:var(--muted);font-weight:400;font-size:15px}
+.buybar-copy p{margin:0}
+.buybar-actions .btn{display:inline-block;padding:12px 22px;font-size:15px}
+.buybar-singles{margin:12px 0 0;font-size:14px;color:var(--muted);line-height:1.5;display:flex;flex-wrap:wrap;gap:4px 16px}
+.buybar-singles a{font-weight:700;white-space:nowrap}
+.buybar-fine{margin:6px 0 0;font-size:12.5px;color:var(--muted)}
+@media(min-width:761px){.buybar{grid-template-columns:1.25fr 1fr}.buybar-actions{padding-top:18px}}
