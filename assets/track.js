@@ -5,12 +5,12 @@
  *   2. stamps it onto every Stripe buy link as client_reference_id, so each sale is tied to
  *      the post that drove it (read back by the delivery Worker's /claim),
  *   3. beacons every outbound click {src, link, page} to the Worker's /c endpoint.
- * ENDPOINT stays empty until the tf-store-delivery Worker is deployed; until then only step 2
- * runs, and the page behaves exactly as before. Links always navigate normally — the beacon
+ * ENDPOINT = the tf-store-delivery Worker /c route (live since 2026-09-25); if it is ever emptied,
+ * only step 2 runs and the page behaves exactly as before. Links always navigate normally — the beacon
  * never delays or blocks a click.
  */
 (function () {
-  var ENDPOINT = ""; // e.g. "https://tf-store-delivery.<sub>.workers.dev/c" once deployed
+  var ENDPOINT = "https://tf-store-delivery.tf-store-delivery.workers.dev/c"; // Worker live 2026-09-25 (Dev)
   var KEY = "tf_src", DAYS = 30;
 
   function clean(v) {
