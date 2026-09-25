@@ -58,6 +58,13 @@ section + section{border-top:1px solid rgba(200,162,74,.28)}
   padding:13px 24px;border-radius:999px;font-size:15px;box-shadow:0 4px 14px rgba(0,0,0,.18)}
 .btn:hover{background:var(--accent2);text-decoration:none}
 .btn.ghost{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.6);box-shadow:none;margin-left:10px}
+/* evalE E2: <button class="btn"> matches the <a class="btn"> pills (no UA outset border / Arial) */
+button.btn{border:0;font-family:inherit;line-height:inherit;cursor:pointer;-webkit-appearance:none;appearance:none}
+/* evalE E3: hero CTA pair wraps with a real gap at 390 */
+.ctas{display:flex;flex-wrap:wrap;gap:10px 12px;justify-content:center}
+.ctas .btn.ghost{margin-left:0}
+/* evalE E13/E15: keep receipt segments and price pairs on one line */
+.nw{white-space:nowrap}
 /* ---- sections ---- */
 main{padding:8px 0 40px}
 section{padding:44px 0}
